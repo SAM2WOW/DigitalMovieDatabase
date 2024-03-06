@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpd7ml5of2hgr"]
+
+[ext_resource type="Script" path="res://scenes/icon.gd" id="2_3ac65"]
+[ext_resource type="AudioStream" uid="uid://bow43ulaf87af" path="res://arts/videos/Windows Navigation Start.wav" id="2_w5mif"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q6uy0"]
+
+[node name="Icon" type="Button"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_vertical = 4
+focus_mode = 0
+text = "Email"
+icon = SubResource("CompressedTexture2D_q6uy0")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("2_3ac65")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_w5mif")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ouagbputkkd1"]
+
+[ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="1_s06r8"]
+[ext_resource type="Texture2D" uid="uid://by0xhg6qkwwxb" path="res://arts/icons/video_mg-2.png" id="2_jgqde"]
+[ext_resource type="VideoStream" path="res://arts/videos/goonie.ogv" id="3_xb6l7"]
+
+[node name="Ads" instance=ExtResource("1_s06r8")]
+window_icon = ExtResource("2_jgqde")
+window_name = "The Goonies.mov"
+
+[node name="VideoStreamPlayer" parent="VBoxContainer" index="0"]
+stream = ExtResource("3_xb6l7")
+
+[node name="Label" parent="VBoxContainer/Panel" index="0"]
+text = "I think I have a MATCH. I'm sure of it."

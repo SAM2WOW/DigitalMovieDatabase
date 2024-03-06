@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bydua10qenqlu"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_wfr3h"]
+[ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="2_0ttwu"]
+[ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="3_omi5c"]
+[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="4_sol5s"]
+[ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="5_vgsp1"]
+
+[node name="Notepad" instance=ExtResource("1_wfr3h")]
+position = Vector2i(0, 22)
+size = Vector2i(301, 317)
+window_icon = ExtResource("2_0ttwu")
+window_name = "Guide.txt"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Control/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "[ Guide to the Secret Lock ]
+
+_  _  _  _  _
+
+
+Panther 1
+Sunshine 3
+Blue 3
+Goonies 4
+1984 5"
+wrap_mode = 1
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Panel" index="0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "Last Edited 3/15/2003"
+
+[node name="Icon" parent="Control/VBoxContainer" index="2" instance=ExtResource("3_omi5c")]
+visible = false
+layout_mode = 2
+icon_texture = ExtResource("4_sol5s")
+icon_name = "Ads"
+window = ExtResource("5_vgsp1")

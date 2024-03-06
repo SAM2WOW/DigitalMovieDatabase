@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bftrndjajbj5i"
+path="res://.godot/imported/Windows Vista Startup.wav-45419cff6cfff379a03bea7c1ba99112.sample"
+
+[deps]
+
+source_file="res://arts/videos/Windows Vista Startup.wav"
+dest_files=["res://.godot/imported/Windows Vista Startup.wav-45419cff6cfff379a03bea7c1ba99112.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

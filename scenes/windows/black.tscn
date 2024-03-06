@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://o4ff4ab2cw1v"]
+
+[ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="1_72fun"]
+[ext_resource type="Texture2D" uid="uid://w2aph6j7vfpm" path="res://arts/icons/video_mk-5.png" id="2_ajbps"]
+[ext_resource type="VideoStream" path="res://arts/videos/black.ogv" id="3_xb4km"]
+
+[node name="Ads" instance=ExtResource("1_72fun")]
+window_icon = ExtResource("2_ajbps")
+window_name = "The Black Panther.mov"
+
+[node name="VideoStreamPlayer" parent="VBoxContainer" index="0"]
+stream = ExtResource("3_xb4km")
+
+[node name="Label" parent="VBoxContainer/Panel" index="0"]
+text = "I do appreciate your help in BUSAN."

@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://b060jtmgkpaqq"]
+
+[ext_resource type="PackedScene" uid="uid://dp76guknwa3lx" path="res://scenes/window.tscn" id="1_c83mn"]
+[ext_resource type="Texture2D" uid="uid://dlcph7u8wcrm6" path="res://arts/icons/video_gr-2.png" id="2_nmtf1"]
+[ext_resource type="Texture2D" uid="uid://dm8c66hyo85l" path="res://Themes/Classic95/Styles/Window/CloseBtn.png" id="3_gv8ls"]
+[ext_resource type="Texture2D" uid="uid://tyjtjti37h5c" path="res://Themes/Classic95/Styles/Window/CloseBtnH.png" id="4_qxa25"]
+[ext_resource type="Texture2D" uid="uid://c5q3bccdc35i" path="res://Themes/Classic95/Styles/Window/CloseBtnPressed.png" id="5_jaawk"]
+[ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="6_os6gs"]
+[ext_resource type="VideoStream" path="res://arts/videos/1984.ogv" id="6_x0db3"]
+[ext_resource type="Texture2D" uid="uid://dhk47b6k31s6m" path="res://arts/icons/artage-io-48169_1707373413.png" id="7_nrq6v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lbno"]
+texture = ExtResource("3_gv8ls")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02xw6"]
+texture = ExtResource("4_qxa25")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2qta"]
+texture = ExtResource("5_jaawk")
+
+[node name="Ads" instance=ExtResource("1_c83mn")]
+position = Vector2i(0, 22)
+size = Vector2i(640, 405)
+window_icon = ExtResource("2_nmtf1")
+window_name = "1984.mov"
+
+[node name="CenterContainer" parent="Control" index="1"]
+visible = false
+
+[node name="Button" type="Button" parent="Control" index="2"]
+visible = false
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2lbno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_02xw6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i2qta")
+text = "     "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+stream = ExtResource("6_x0db3")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DEATH to the eternal enemy of Oceania."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" parent="VBoxContainer" index="2" instance=ExtResource("6_os6gs")]
+visible = false
+layout_mode = 2
+icon_texture = ExtResource("7_nrq6v")
+icon_name = "Ads"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

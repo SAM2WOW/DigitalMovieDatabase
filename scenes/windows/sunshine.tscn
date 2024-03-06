@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6p0l11cwqckw"]
+
+[ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="1_p3qn1"]
+[ext_resource type="VideoStream" path="res://arts/videos/Sunshine.ogv" id="2_l7tmw"]
+[ext_resource type="Texture2D" uid="uid://djoderhrtw236" path="res://arts/icons/video_-2.png" id="2_m21ga"]
+
+[node name="Ads" instance=ExtResource("1_p3qn1")]
+window_icon = ExtResource("2_m21ga")
+window_name = "Sunshine.mov"
+
+[node name="VideoStreamPlayer" parent="VBoxContainer" index="0"]
+stream = ExtResource("2_l7tmw")
+
+[node name="Label" parent="VBoxContainer/Panel" index="0"]
+text = "Do I have to SPELL it out for you?"

@@ -1,0 +1,201 @@
+[gd_scene load_steps=22 format=3 uid="uid://ygmll4g223mh"]
+
+[ext_resource type="Script" path="res://levels/main.gd" id="1_3si3j"]
+[ext_resource type="Script" path="res://scripts/Console.gd" id="2_aopoi"]
+[ext_resource type="Texture2D" uid="uid://0ed6rfvl13tp" path="res://arts/wallpaper.webp" id="2_dpm1l"]
+[ext_resource type="Script" path="res://scripts/WindowsManager.gd" id="3_6e8k6"]
+[ext_resource type="PackedScene" uid="uid://dpd7ml5of2hgr" path="res://scenes/icon.tscn" id="3_asdw0"]
+[ext_resource type="Texture2D" uid="uid://cye1pdsjf00si" path="res://arts/icons/artage-io-48140_1707444770.png" id="6_cglk1"]
+[ext_resource type="PackedScene" uid="uid://bydua10qenqlu" path="res://scenes/windows/notepad.tscn" id="7_jkpee"]
+[ext_resource type="Texture2D" uid="uid://djoderhrtw236" path="res://arts/icons/video_-2.png" id="8_j0gdx"]
+[ext_resource type="PackedScene" uid="uid://c6p0l11cwqckw" path="res://scenes/windows/sunshine.tscn" id="9_npxl3"]
+[ext_resource type="Texture2D" uid="uid://dlcph7u8wcrm6" path="res://arts/icons/video_gr-2.png" id="10_hgu5m"]
+[ext_resource type="PackedScene" uid="uid://b060jtmgkpaqq" path="res://scenes/windows/ads.tscn" id="10_mbeyi"]
+[ext_resource type="Texture2D" uid="uid://dgc1ae4dccxft" path="res://arts/DVD-Video_Logo.svg.png" id="11_qbj6n"]
+[ext_resource type="Texture2D" uid="uid://cvopury2qf8nj" path="res://arts/icons/video_mk-2.png" id="11_ser7f"]
+[ext_resource type="Texture2D" uid="uid://by0xhg6qkwwxb" path="res://arts/icons/video_mg-2.png" id="12_gl8ya"]
+[ext_resource type="PackedScene" uid="uid://bo5n4f42rhea0" path="res://scenes/windows/dvd.tscn" id="12_q22pg"]
+[ext_resource type="PackedScene" uid="uid://bpgk3h0yp18wu" path="res://scenes/windows/blue.tscn" id="13_dstyk"]
+[ext_resource type="Texture2D" uid="uid://w2aph6j7vfpm" path="res://arts/icons/video_mk-5.png" id="13_fgtqr"]
+[ext_resource type="PackedScene" uid="uid://ouagbputkkd1" path="res://scenes/windows/goonie.tscn" id="15_42w53"]
+[ext_resource type="PackedScene" uid="uid://o4ff4ab2cw1v" path="res://scenes/windows/black.tscn" id="17_l6kd6"]
+[ext_resource type="AudioStream" uid="uid://bftrndjajbj5i" path="res://arts/videos/Windows Vista Startup.wav" id="20_7ce1k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fsng2"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_3si3j")
+
+[node name="Console" type="Node" parent="."]
+script = ExtResource("2_aopoi")
+
+[node name="WindowsManager" type="Node" parent="."]
+script = ExtResource("3_6e8k6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dpm1l")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.501961, 0.501961, 1)
+
+[node name="Icons" type="MarginContainer" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GridContainer" type="GridContainer" parent="Control/Icons"]
+layout_mode = 2
+
+[node name="TextureButton" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = null
+icon_texture = ExtResource("6_cglk1")
+icon_name = "Guide.txt"
+window = ExtResource("7_jkpee")
+
+[node name="TextureButton2" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = SubResource("CompressedTexture2D_fsng2")
+icon_texture = ExtResource("8_j0gdx")
+icon_name = "Sunshine.mov"
+window = ExtResource("9_npxl3")
+
+[node name="TextureButton4" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = SubResource("CompressedTexture2D_fsng2")
+icon_texture = ExtResource("10_hgu5m")
+icon_name = "1984.mov"
+window = ExtResource("10_mbeyi")
+
+[node name="TextureButton5" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = SubResource("CompressedTexture2D_fsng2")
+icon_texture = ExtResource("11_ser7f")
+icon_name = "Out of the blue.mov"
+window = ExtResource("13_dstyk")
+
+[node name="TextureButton6" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = SubResource("CompressedTexture2D_fsng2")
+icon_texture = ExtResource("12_gl8ya")
+icon_name = "The Goonies.mov"
+window = ExtResource("15_42w53")
+
+[node name="TextureButton7" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+layout_mode = 2
+text = ""
+icon = SubResource("CompressedTexture2D_fsng2")
+icon_texture = ExtResource("13_fgtqr")
+icon_name = "The Black Panther.mov"
+window = ExtResource("17_l6kd6")
+
+[node name="TextureButton3" parent="Control/Icons/GridContainer" instance=ExtResource("3_asdw0")]
+visible = false
+layout_mode = 2
+text = ""
+icon = SubResource("CompressedTexture2D_fsng2")
+icon_texture = ExtResource("11_qbj6n")
+icon_name = "DVD"
+window = ExtResource("12_q22pg")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -668.0
+offset_top = -136.0
+offset_right = -29.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.215686)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 71
+text = "Digital Movie Database"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Taskbar" type="Panel" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 30.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Taskbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -30.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Windows" type="Node2D" parent="."]
+
+[node name="Notepad" parent="Windows" instance=ExtResource("7_jkpee")]
+position = Vector2i(653, 100)
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_7ce1k")
+autoplay = true
