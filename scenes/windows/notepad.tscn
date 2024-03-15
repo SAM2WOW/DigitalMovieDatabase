@@ -23,7 +23,7 @@ grow_vertical = 2
 [node name="TextEdit" type="TextEdit" parent="Control/VBoxContainer" index="0"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "[ Guide to the Secret Lock ]
+text = "[ Guide to the AR (Actor Recognition) Tablet ]
 
 _  _  _  _  _
 
@@ -43,7 +43,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 16.0
-text = "Last Edited 3/15/2003"
+text = "Last Edited 3/14/2024"
 
 [node name="Icon" parent="Control/VBoxContainer" index="2" instance=ExtResource("3_omi5c")]
 visible = false
